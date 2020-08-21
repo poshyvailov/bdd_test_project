@@ -23,5 +23,5 @@ Feature: Login To Jira
       | login      | pass   |
       | blablabla  | 123456 |
       | wronglogin | ****   |
-
 #    @wip
+
