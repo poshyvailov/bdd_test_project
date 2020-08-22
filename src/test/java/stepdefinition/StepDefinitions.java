@@ -19,6 +19,10 @@ import java.io.File;
 import java.io.IOException;
 
 public class StepDefinitions {
+
+
+
+
     @Before
     public void beforeCucumberScenario(Scenario scenario) {
         WebDriverFactory.createInstance("Chrome");
@@ -52,25 +56,25 @@ public class StepDefinitions {
     }
 
 
-    @Then("^I enter user name ([^\"]*)$")
-    public void iEnterUserName(String login) {
-        new LoginPage().enterUserName(login);
-    }
-
-//    @Then("^I enter user name - \"(.*?)\"$")
-//    public void enterUserName(String userName) {
-//        new LoginPage().enterUserName(userName);
+//    @Then("^I enter user name ([^\"]*)$")
+//    public void iEnterUserName(String login) {
+//        new LoginPage().enterUserName(login);
 //    }
 
-    @Then("^I enter password ([^\"]*)$")
-    public void iEnterPassword(String pass) {
-       new LoginPage().enterPassword(pass);
-
+    @Then("^I enter user name1 - \"(.*?)\"$")
+    public void enterUserName1(String userName) {
+        new LoginPage().enterUserName(userName);
     }
-//    @Then("^I enter password - \"(.*?)\"$")
-//    public void enterPassword(String password) {
-//        new LoginPage().enterPassword(password);
+
+//    @Then("^I enter password ([^\"]*)$")
+//    public void iEnterPassword(String pass) {
+//       new LoginPage().enterPassword(pass);
+//
 //    }
+    @Then("^I enter password1 - \"(.*?)\"$")
+    public void enterPassword(String password) {
+        new LoginPage().enterPassword(password);
+    }
 
     @Then("^I click on the login button$")
     public void clickLoginButton() {

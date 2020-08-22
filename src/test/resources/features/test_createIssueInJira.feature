@@ -1,25 +1,21 @@
 Feature: Create Issue
 
-  @Background:
-  Scenario Outline: Login to Jira
+  Background: Login
     Given I navigate to Jira Login Page
-    And I enter user name <login>
-    And I enter password <pass>
+    And I enter user name1 - "poshyvailov"
+    And I enter password1 - "poshyvailov"
     And I click on the login button
     Then I am on the Home Page
+    And I debug
 
-    Examples:
-      | login       | pass        |
-      | poshyvailov | poshyvailov |
-
-
-  @Regression
+  @Regression @wip
   Scenario: Create new issue in Jira
     And I will wait when my ticket will be opened
     Then I check is Create Ticket button is active
     And I am waiting when main page will be fully loaded
     And I click on the Create Issue button
     And Create ticket window is open
+    And I debug
     Then I will clear project name field
     And I fill project name - "Webinar (WEBINAR)"
     And I press Tab
